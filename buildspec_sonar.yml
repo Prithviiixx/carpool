@@ -15,8 +15,8 @@ phases:
       - export PATH=$PATH:./sonar-scanner-4.7.0.2747-linux/bin/
   build:
     commands:
-      - sonar-scanner -Dsonar.login=4086ca4a6ce3eecae78fb7cf19818467931ca6f3 -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=21234191 -Dsonar.organization=gauravs30 -DgeneratePom=true
+      - sonar-scanner -Dsonar.login=96a6b7e6d48e1fabc33ace06166b9c043113b94a -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=22202625-carpool -Dsonar.organization=prithviiixx -DgeneratePom=true
       - sleep 5
-      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=21234191 >result.json
+      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=21222202625-carpool34191 >result.json
       - cat result.json
       - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
